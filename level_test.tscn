@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.882353, 0.203922, 0.203922, 1 )
+
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
+
+[node name="test" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.574831, 0 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.951164, 0.308685, 0, -0.308685, 0.951164, 0, 9.00627, 17.8049 )
+shadow_enabled = true
+
+[node name="floor" type="StaticBody" parent="."]
+transform = Transform( 30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -1.47816, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="floor"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="floor"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="tower" type="Spatial" parent="."]
+
+[node name="body" type="StaticBody" parent="tower"]
+transform = Transform( 0.922471, 0, -0.386067, 0, 20, 0, 0.386067, 0, 0.922471, -0.858942, 0.479361, 0.118861 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="tower/body"]
+shape = SubResource( 3 )
+
+[node name="CSGMesh" type="CSGMesh" parent="tower/body"]
+mesh = SubResource( 5 )
+
+[node name="marche1" type="StaticBody" parent="tower"]
+transform = Transform( 1.76157, 0, -0.947039, 0, 0.3, 0, 0.947039, 0, 1.76157, 1.58714, 0.902799, 1.49769 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="tower/marche1"]
+shape = SubResource( 3 )
+
+[node name="CSGMesh" type="CSGMesh" parent="tower/marche1"]
+mesh = SubResource( 5 )
+
+[node name="marche2" type="StaticBody" parent="tower"]
+transform = Transform( 0.833545, 0, 1.81802, 0, 0.3, 0, -1.81802, 0, 0.833545, 0.47927, 3.83007, -2.51849 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="tower/marche2"]
+shape = SubResource( 3 )
+
+[node name="CSGMesh" type="CSGMesh" parent="tower/marche2"]
+mesh = SubResource( 5 )
+
+[node name="marche3" type="StaticBody" parent="tower"]
+transform = Transform( 0.833545, 0, 1.81802, 0, 0.3, 0, -1.81802, 0, 0.833545, -3.39886, 7.21263, -0.708985 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="tower/marche3"]
+shape = SubResource( 3 )
+
+[node name="CSGMesh" type="CSGMesh" parent="tower/marche3"]
+mesh = SubResource( 5 )
+
+[node name="marche4" type="StaticBody" parent="tower"]
+transform = Transform( 0.833545, 0, 1.81802, 0, 0.3, 0, -1.81802, 0, 0.833545, -2.09531, 10.6822, 2.57326 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="tower/marche4"]
+shape = SubResource( 3 )
+
+[node name="CSGMesh" type="CSGMesh" parent="tower/marche4"]
+mesh = SubResource( 5 )
+
+[node name="marche5" type="StaticBody" parent="tower"]
+transform = Transform( 0.833545, 0, 1.81802, 0, 0.3, 0, -1.81802, 0, 0.833545, 1.24625, 15.6924, 0.525658 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="tower/marche5"]
+shape = SubResource( 3 )
+
+[node name="CSGMesh" type="CSGMesh" parent="tower/marche5"]
+mesh = SubResource( 5 )
+
+[node name="KinematicBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825462, 1.00913, 10.1891 )
+
